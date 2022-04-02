@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //@IBOutlet weak var item_text: UITextField!
-    @IBOutlet weak var id_text: UITextField!
+    //@IBOutlet weak var id_text: UITextField!
     @IBOutlet weak var item_text: UITextField!
     @IBOutlet weak var price_text: UITextField!
     @IBOutlet weak var amount_text: UITextField!
@@ -38,10 +38,10 @@ class ViewController: UIViewController {
         //let url = URL(string: "http://127.0.0.1/insert_database1_table1.php");
         //let url = URL(string: "http://192.168.100.2/insert_database1_table1.php");
         //let url = URL(string: "http://192.168.100.4/insert_database1_purchase_list.php");
-        let url = URL(string: "http://220.136.62.137/insert_database1_purchase_list.php");
+        let url = URL(string: "http://118.168.128.140/insert_database1_purchase_list_new.php");
         //let url = URL(string: "http://localhost/insert_database1_purchase_list.php");
         
-        let id1:String = id_text.text!;
+        //let id1:String = id_text.text!;
         let item1:String = item_text.text!;
         let price1:Int16 = Int16(price_text.text!)!;
         let amount1:Int16 = Int16(amount_text.text!)!;
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             timeoutInterval: 30);
         
         //request.httpBody = "x=5&y=3".data(using: .utf8)
-        request.httpBody = "id=\(id1)&item=\(item1)&price=\(price1)&shipping=\(shipping1)&location=\(location1)&payment=\(payment1)&amount=\(amount1)&shipping=\(shipping1)&today=\(purchase_date1)&memo=\(memo1)".data(using: .utf8);
+        request.httpBody = "item=\(item1)&price=\(price1)&shipping=\(shipping1)&location=\(location1)&payment=\(payment1)&amount=\(amount1)&shipping=\(shipping1)&today=\(purchase_date1)&memo=\(memo1)".data(using: .utf8);
         request.httpMethod = "POST";
         
         let session = URLSession(configuration: .default);
